@@ -1,0 +1,796 @@
+:root {
+    --textColor: #FA7070;
+    --hoverColor: #C6EBC5;
+    --backgroundColor: rgb(252, 244, 203);
+    --boxColor: #A1C298;
+    --italicFont: 'Pacifico', cursive;
+    --basicFont: 'Raleway', sans-serif;
+    --gradientColor: linear-gradient(151deg, rgba(251, 242, 207, 1) 0%, rgba(198, 235, 197, 1) 85%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 2rem;
+    font-family: var(--basicFont);
+    background: var(--backgroundColor);
+    color: var(--textColor);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+.header {
+    display: flex;
+    background: rgb(49, 48, 48);
+    height: 10rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.header>ul {
+    list-style: none;
+    font-size: 3rem;
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+}
+
+.header>ul a {
+    position: relative;
+    transition: opacity 0.5s;
+}
+
+.header>ul a:hover {
+    opacity: 80%;
+}
+
+.underlineHover::before {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--hoverColor);
+    transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .underlineHover:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+.header a>i {
+    font-size: 200%;
+    transition: 0.2s;
+}
+
+.header a>i:hover {
+    transform: scale(115%);
+    color: var(--hoverColor);
+}
+
+
+
+.header--div {
+    height: 45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 6rem;
+    position: relative;
+    margin-top: 5rem;
+}
+
+.header--div > div{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+
+.h1 {
+    font-size: 350%;
+    text-decoration: underline;
+    font-family: var(--italicFont);
+    font-weight: bolder;
+
+
+}
+
+.h1--p {
+    font-size: 120%;
+}
+
+.header--div > a{
+    width: 15%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.foodFig {
+    width: 20rem;
+    height: 20rem;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.foodFig>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.mySlides {
+    display: none;
+
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.8s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .6
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.main {
+    margin: 8rem 4rem 4rem 4rem;
+    min-height: 80vh;
+}
+
+
+
+.main--h2 {
+    font-size: 180%;
+}
+
+.recepten{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.main--art{
+    width:100%;
+    min-height: 20rem;
+    background: white;
+    border-radius:1rem ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.main--art > img{
+    height: 100%;
+    width: 20%;
+    object-fit: cover;
+    border-radius: 1.25rem;
+}
+
+.info{
+    width: 60%;
+}
+
+.main--art > div > h2{
+    font-size: 175%;
+}
+
+.ondertitel{
+    opacity: 60%;
+}
+
+.profile_head{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+    margin-bottom: 4rem;
+
+}
+
+.profile_head > div{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile_head > div > a{
+    width: max-content;
+    text-align: center;
+}
+
+
+.profile_head p{
+    color: black;
+}
+
+.profile_h2{
+    font-family: var(--basicFont);
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.profile_fig{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+}
+
+.profile_fig >img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.artsprof{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.artprof{
+    width: 25rem;
+    height: 25rem;
+    background-color: transparent;
+    perspective: 100rem;
+}
+
+.artprof-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style:preserve-3d;
+    background: white;  
+    border-radius:1rem ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.artprof:hover .artprof-inner{
+    transform: rotateY(180deg);
+}
+
+.artprof-front, .artprof-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 2rem;
+}
+
+.artprof-front{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.urgentie{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--textColor);
+    border-radius: 50%;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+.artprof-back{
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.artprof-back > p {
+    font-size: 80%;
+}
+
+.artprof-back > a{
+    width: 100%;
+    text-align: center;
+}
+
+.artprof-front > img{
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.divider{
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.divider > .recepten{
+    margin-top: 0;
+}
+
+.filter{
+    width: 35rem;
+    height: 50rem;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.search{
+    border: none;
+    border-bottom: 0.175rem solid var(--hoverColor) ;
+    border-radius: 0.125rem;
+    padding: 0rem 1rem 0.25rem 0;
+    font-size: 70%;
+    font-family: var(--basicFont);
+    transition: 0.2s;
+}
+
+.search:focus{
+    outline: none;
+    border-bottom: 0.5rem solid var(--hoverColor);
+}
+
+.checkbox-sec{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 3.5rem;
+    padding-bottom: 0.25rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: black;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    border: 0.2rem solid var(--textColor);
+    border-radius: 0.25rem;
+    transition: 0.2s all;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkbox:hover input ~ .checkmark {
+    background-color: var(--hoverColor);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkbox input:checked ~ .checkmark {
+    background-color: var(--boxColor);
+    border: none;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+
+.checkbox > label{
+    color: black;
+}
+
+.recept{
+    width: 80%;
+    min-height: 70rem;
+    background: white;
+    margin: 0 auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    
+}
+
+.recept > div{
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.recept > img{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.omschrijving{
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+    width: 60%;
+}
+
+.recept-info{
+    width: 25%;
+    height: 40rem;
+    display: flex;
+    padding-top: 5.52rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 4rem;
+}
+
+.recept-info > p{
+    opacity: 70%;
+}
+
+.recept-info >div{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.recensies{
+    min-height: 30rem ;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.review_form{
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+.review_form > button{
+    width: 10rem;
+}
+
+
+.recensies  label{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.reactieschrijven {
+    background: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    min-height: 10rem;
+    font-family: var(--basicFont);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    font-size: 100%;
+    resize: none;
+}
+
+.reactieschrijven:focus{
+    outline: none;
+}
+
+.recensies > div{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.recensies  article{
+    width: 32.755%;
+    height: 15rem;
+    display: flex;
+    gap: 1rem;
+    padding:1rem;
+    margin-top: 1rem;
+    background: white;
+    align-items:center ;  
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    
+}
+
+.recensies img{
+    width: 10rem;
+    height: 10rem;
+
+    border-radius: 50%;
+
+}
+
+
+.form_inlog-reg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+}
+
+.form_inlog-reg > form{
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    position: relative;
+}
+
+
+.form_inlog-reg div{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form_inlog-reg button{
+    margin-bottom: 1rem;
+}
+
+.form_inlog-reg div:last-of-type{
+    margin-bottom: 2rem;
+}
+
+.form_inlog-reg a {
+    color: black;
+    width: 0%;
+}
+
+.form_inlog-reg a:hover{
+    color: rgba(0, 0, 0, 0.647);
+}
+
+.alert, .alert2{
+    position: absolute;
+    top: -7.5rem;
+    border-radius: 0.5rem;
+    left: 0;
+    background: var(--boxColor);
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.alert2{
+    top: -5rem;
+}
+
+.maken_form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 2rem;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius:0.5rem;
+    gap: 1rem;
+}
+
+.maken_form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.maken_form input[type=text], .maken_form input[type=number]{
+    width: 45%;
+    font-size: 100%;
+}
+
+.maken_form input[type=file]::file-selector-button{
+    background: var(--boxColor);
+    color: white;
+    border: none;
+    font-family: var(--basicFont);
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 100%;
+    font-weight: 500;
+    border-radius: 1.25rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.maken_form input[type=file]::file-selector-button:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    background:var(--hoverColor);
+    box-shadow: none;
+}
+
+.maken_form textarea{
+    resize: none;
+    height: 20rem;
+    font-family: var(--basicFont);
+    font-size: 80%;
+    padding: 0.5rem;
+    transition: 0.1s all;
+}
+
+.maken_form textarea:focus{
+    outline: 0.25rem solid var(--boxColor);
+    border: none;
+}
+
+.maken_form  select{
+    width: 45%;
+    padding: 0.25rem;
+    border: 0.2rem solid var(--boxColor);
+    transition: 0.1s all;
+}
+
+.maken_form select:focus{
+    background: rgba(0, 0, 0, 0.088);
+}
+
+.maken_form > button{
+    width:30%;
+}
+
+.text {
+    margin-top: 2rem;
+}
+
+.links{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.button{
+    background: var(--boxColor);
+    color: white;
+    border: none;
+    font-family: var(--basicFont);
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 100%;
+    font-weight: 500;
+    border-radius: 1.25rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.2s;
+
+}
+
+.button > a{
+    color: white;
+
+}
+
+.button > a:hover{
+    color: black;
+}
+
+.button:hover{
+    transform: translateY(0.5rem);
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    background:var(--hoverColor);
+    box-shadow: none;
+}
+
+.links > a:last-of-type{    
+    color: black;
+    transition: 0.3s;
+    position: relative;
+}
+
+.links > a:hover:last-of-type{
+    color: inherit;
+}
+
+.footer{
+    display: flex;
+    background: rgb(49, 48, 48);
+    height: 10rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.footer > div{
+    display: flex;
+    gap:4rem;
+}
+
+.footer > div a{
+    font-size: 200%;
+    transition: 0.5s;
+}
+
+.footer > div a:hover{
+    opacity: 80%;
+}
